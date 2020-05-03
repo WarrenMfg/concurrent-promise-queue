@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Concurrent Promise Queue</title>
+</head>
+<body>
+  <div id="buttons">
+    <button id="queueButton">Queue</button>
+    <div id="concurrencyContainer">
+      <p>Concurrency</p>
+      <button id="concurrencyPlus">+1</button>
+      <button id="concurrencyMinus">-1</button>
+    </div>
+    <div id="delayContainer">
+      <p>Delay</p>
+      <button id="delayPlus">+1</button>
+      <button id="delayMinus">-1</button>
+    </div>
+    <button id="clear">Clear</button>
+
+  </div>
+
+  <div id="posts"></div>
+
+  <div id="infoPanel">
+    <div id="concurrencyAndDelay">
+      <p>Concurrency: <span id="concurrencyCount">2</span></p>
+      <p>Delay: <span id="delayCount">0</span> <span>seconds</span></p>
+      <p>Time Remaining: <span id="timeRemaining">0</span> <span>seconds</span></p>
+    </div>
+    <div id="dataVis">
+      <div id="dataVisLabels">
+        <p id="dataVisLabels-queue">Queue: </p>
+        <p id="dataVisLabels-running">Running: </p>
+        <p id="dataVisLabels-complete">Complete: </p>
+      </div>
+
+      <div id="dataVisData">
+        <p id="queue">&nbsp;</p>
+        <p id="running">&nbsp;</p>
+        <p id="complete">&nbsp;</p>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

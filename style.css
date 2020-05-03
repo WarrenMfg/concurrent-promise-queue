@@ -1,0 +1,219 @@
+:root {
+  --red: #D32218;
+  --orange: #DA7116;
+  --yellow: #E7E129;
+  --green: #5E8F26;
+  --blue: #061556
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Arial;
+}
+
+*:focus {
+  outline: none;
+}
+
+body {
+  margin: 0;
+}
+
+#buttons {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas: ". queue concurrency delay clear .";
+  align-items: center;
+  position: fixed;
+  top: 0;
+  height: 140px;
+  width: 100%;
+  box-shadow: 0 0 10px gray;
+/*   z-index: 1; */
+}
+
+#queueButton {
+  grid-area: queue;
+  transition: all 0.2s ease;
+}
+
+#queueButton:hover {
+  background-color: var(--green);
+}
+
+#queueButton, #clear {
+  font-size: 20px;
+  margin: 0 auto;
+  height: 60px;
+  width: 70%;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 20vw;
+  transition: all 0.2s ease;
+}
+
+#concurrencyContainer {
+  grid-area: concurrency;
+}
+
+#delayContainer {
+  grid-area: delay;
+}
+
+#concurrencyContainer, #delayContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#concurrencyContainer p, #delayContainer p {
+  margin: 0;
+  font-size: 20px;
+
+}
+
+#concurrencyContainer button, #delayContainer button {
+  width: 35%;
+  font-size: 20px;
+  border: 1px solid black;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+
+#concurrencyPlus, #delayPlus {
+  margin: 5px 0;
+}
+
+#concurrencyPlus:hover, #delayPlus:hover {
+  background-color: var(--green);
+}
+
+#concurrencyMinus:hover, #delayMinus:hover {
+  background-color: var(--orange);
+}
+
+#clear {
+  grid-area: clear;
+  transition: all 0.2s ease;
+}
+
+#clear:hover {
+  background-color: var(--orange);
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+#posts {
+  position: fixed;
+  top: 140px;
+  width: 100%;
+  height: calc(100vh - 140px - 140px);
+  overflow-y: scroll;
+}
+
+#posts p {
+  margin: 0;
+  padding: 20px 20px;
+  transition: all 0.2s ease;
+}
+
+#posts p:hover {
+  box-shadow: 0 0 5px gray;
+}
+
+#infoPanel {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 0 10px gray;
+}
+
+#concurrencyAndDelay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 20px 0;
+}
+
+#concurrencyAndDelay p {
+  font-size: 17px;
+  margin: 0 20px 10px;
+  font-weight: bold;
+}
+
+#concurrencyAndDelay p span {
+  font-weight: initial;
+}
+
+#dataVis {
+  display: flex;
+  padding: 0 20px 20px;
+  font-size: 17px;
+}
+
+#dataVisLabels {
+  font-weight: bold;
+  text-align: right;
+  padding-right: 5px;
+}
+
+#dataVisLabels p {
+  margin: 0;
+}
+
+p#dataVisLabels-queue {
+  color: var(--red);
+}
+
+p#dataVisLabels-running {
+  margin: 5px 0;
+  color: var(--orange);
+}
+
+p#dataVisLabels-complete {
+  color: var(--green);
+}
+
+#dataVisData {
+  width: 100%;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#dataVisData::after {
+  content: '';
+  width: 100px;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+
+#dataVisData p {
+  margin: 0;
+  white-space: nowrap;
+}
+
+#dataVisData #queue {
+  color: var(--red);
+}
+
+#dataVisData #running {
+  margin: 5px 0;
+  color: var(--orange);
+}
+
+#dataVisData #complete {
+  color: var(--green);
+}
+
+#dataVisData span {
+  display: inline-block;
+  padding: 0 5px;
+}
