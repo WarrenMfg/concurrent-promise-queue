@@ -17,7 +17,6 @@ const posts = document.getElementById('posts');
 // info panel (bottom)
 const concurrencyCount = document.getElementById('concurrencyCount');
 const delayCount = document.getElementById('delayCount');
-const timeRemaining = document.getElementById('timeRemaining');
 const queue = document.getElementById('queue');
 const running = document.getElementById('running');
 const complete = document.getElementById('complete');
@@ -45,9 +44,6 @@ function dequeue() {
   while (canDequeue()) {
     // fetch post
     setTimeout(fetchPost, delay, head, delay);
-
-    // update time remaining
-    // do stuff here
 
     // increment head
     head++;
