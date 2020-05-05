@@ -106,6 +106,10 @@ button:hover {
   cursor: pointer;
 }
 
+#queueButton:active, #concurrencyPlus:active, #concurrencyMinus:active, #delayPlus:active, #delayMinus:active, #clear:active {
+  background-color: white;
+}
+
 #posts {
   position: fixed;
   top: 140px;
