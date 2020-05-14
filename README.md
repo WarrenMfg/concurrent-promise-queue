@@ -3,4 +3,6 @@
 
 [CodePen](https://codepen.io/kentagon/full/qBOVmYj)
 
-![Concurrent Promise Queue](concurrent-promise-queue.gif)
+![CodePen Concurrent Promise Queue](concurrent-promise-queue.gif)
+
+![Terminal Concurrent Promise Queue](ConcurrentPromiseQueue.gif)
